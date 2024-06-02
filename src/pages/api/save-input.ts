@@ -7,6 +7,7 @@ export default async function handler(req: any, res: any) {
     const { name, lastName, email, birthdate, phoneNumber } = req.body;
 
     try {
+      console.log("hola")
       const savedInput = await prisma.formData.create({
         data: { 
           name,
