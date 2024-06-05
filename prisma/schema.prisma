@@ -19,6 +19,7 @@ model formData {
   name        String
   lastName    String
   email       String
+  password    String
   birthdate   DateTime
   phoneNumber String
 }

@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 
 export default async function handler(req: any, res: any) {
   if (req.method === 'POST') {
-    const { name, lastName, email, birthdate, phoneNumber } = req.body;
+    const { name, lastName, email, birthdate, phoneNumber, password } = req.body;
 
     try {
       console.log("hola")
@@ -15,6 +15,7 @@ export default async function handler(req: any, res: any) {
           email,
           birthdate: new Date(birthdate),
           phoneNumber, 
+          password,
         },
       });
       res.status(200).json(savedInput);

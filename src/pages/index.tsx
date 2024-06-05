@@ -14,6 +14,7 @@ type Inputs = {
   email: string
   birthdate: Date
   phoneNumber: string
+  password: string
 }
 
 export default function Home() {
@@ -33,13 +34,13 @@ export default function Home() {
           lastName: data.lastName,
           email: data.email,
           birthdate: data.birthdate,
-          phoneNumber: data.phoneNumber
+          phoneNumber: data.phoneNumber,
+          password: data.password,
         }
       )
 
       if (response.status === 200) {
         setMessage('Input saved successfully');
-        window.alert(message)
         reset()
       } else {
         setMessage('Error saving input');
@@ -70,6 +71,10 @@ export default function Home() {
           <div className="space-y-2">
             <Label htmlFor="email">Correo electrónico</Label>
             <Input id="email" placeholder="Ingresa tu correo electrónico" type="email" {...register("email")}/>
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="email">Contraseña</Label>
+            <Input id="password" placeholder="Ingresa tu contraseña" type="password" {...register("password")}/>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
